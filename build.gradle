@@ -60,7 +60,7 @@ subprojects {
 
         defaultConfig {
             if (isAppModule)
-                applicationId "com.anpxd.ewalker"
+                applicationId "com.gg.baseproject"
 
 
             minSdkVersion _android.minSdkVersion as Integer
