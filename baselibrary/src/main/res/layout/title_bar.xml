@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/root"
+                android:layout_width="match_parent"
+                android:background="#ff6816"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center_vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/left_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/left_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/left_text"
+            style="@style/title_text"
+            tools:text="返回"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/middle_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+
+        <TextView
+            android:id="@+id/middle_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            tools:text="启辕汽车"/>
+
+        <ImageView
+            android:id="@+id/middle_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/right_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/right_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/right_text"
+            style="@style/title_text"
+            tools:text="发布"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

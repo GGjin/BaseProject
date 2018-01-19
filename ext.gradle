@@ -1,0 +1,155 @@
+// external 全局变量
+println("${project.name}: apply ext")
+
+// 以下写法为闭包, 可能不会立即赋值
+project.ext {
+
+    println("${project.name}: init ext")
+
+    def androidPluginVersion = "3.0.0"
+    _android = [
+            plugin           : "com.android.tools.build:gradle:$androidPluginVersion",
+
+            compileSdkVersion: 27,
+            buildToolsVersion: '27.0.2',
+
+            minSdkVersion    : 19,
+            targetSdkVersion : 27,
+            versionCode      : 2,
+            versionName      : "1.0.1"
+    ]
+
+    // kotlin
+    def kotlinVersion = "1.2.20"
+    _kotlin = [
+            // plugins
+            kotlin_gradle_plugin     : "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion",
+            kotlin_android_extensions: "org.jetbrains.kotlin:kotlin-android-extensions:$kotlinVersion",
+
+            // libs
+            kotlin_stdlib            : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    ]
+
+    // UI
+//    def supportLibraryVersion = "27.0.2"
+    def supportLibraryVersion = _android.buildToolsVersion
+    def constraintVersion = "1.0.2"
+
+    support = [
+            drawable    : "com.android.support:support-vector-drawable:$supportLibraryVersion",
+            support_v4  : "com.android.support:support-v4:$supportLibraryVersion",
+            appcompat   : "com.android.support:appcompat-v7:$supportLibraryVersion",
+            recyclerview: "com.android.support:recyclerview-v7:$supportLibraryVersion",
+            design      : "com.android.support:design:$supportLibraryVersion",
+            cardview    : "com.android.support:cardview-v7:$supportLibraryVersion",
+            constraint  : "com.android.support.constraint:constraint-layout:$constraintVersion"
+    ]
+
+    databindingCompiler = "com.android.databinding:compiler:$androidPluginVersion"
+
+    multidex = 'com.android.support:multidex:1.0.1'
+
+    def archLifecycleVersion = "1.0.0"
+
+    lifecycle = [
+            extensions: "android.arch.lifecycle:extensions:$archLifecycleVersion",
+            compiler  : "android.arch.lifecycle:compiler:$archLifecycleVersion"
+    ]
+
+    def roomVersion = "1.0.0"
+    room = [
+            runtime : "android.arch.persistence.room:runtime:$roomVersion",
+            compiler: "android.arch.persistence.room:compiler:$roomVersion"
+    ]
+
+    // rx
+    def rxJavaVersion = "2.1.0"
+    def rxAndroidVersion = "2.0.1"
+    rx = [
+            rxjava2               : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxandroid2            : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            rxlifecycle           : "com.trello.rxlifecycle2:rxlifecycle:$rxJavaVersion",
+            rxlifecycle_android   : "com.trello.rxlifecycle2:rxlifecycle-android:$rxJavaVersion",
+            rxlifecycle_components: "com.trello.rxlifecycle2:rxlifecycle-components:$rxJavaVersion",
+
+            rxpermissions         : 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
+    ]
+
+    def eventBusVersion = "3.1.1"
+    def eventBusCompilerVersion = "3.1.1"
+    bus = [
+            event         : "org.greenrobot:eventbus:$eventBusVersion",
+            event_compiler: "org.greenrobot:eventbus-annotation-processor:$eventBusCompilerVersion)",
+            annotation    : "org.glassfish:javax.annotation:10.0-b28"
+    ]
+
+    // net
+    def okHttp3Version = "3.8.0"
+    okhttp3 = [
+            logging_interceptor: "com.squareup.okhttp3:logging-interceptor:$okHttp3Version",
+    ]
+
+    def retrofitVersion = "2.3.0"
+    retrofit2 = [
+            retrofit       : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            adapter_rxjava2: "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            converter_gson : "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    ]
+
+    def jPushVersion = "3.1.1"
+    def jCoreVersion = "1.1.9"
+    jPush = [
+            push: "cn.jiguang.sdk:jpush:$jPushVersion",
+            core: "cn.jiguang.sdk:jcore:$jCoreVersion"
+    ]
+
+    def glideVersion = "4.4.0"
+    def transformationVersion = "3.0.1"
+    glide = [
+            glide                : "com.github.bumptech.glide:glide:$glideVersion",
+            glide_compiler       : "com.github.bumptech.glide:compiler:$glideVersion",
+            glide_transformations: "jp.wasabeef:glide-transformations:$transformationVersion",
+            okhttp3_integration  : "com.github.bumptech.glide:okhttp3-integration:$glideVersion"
+    ]
+
+    bugly = [
+            crashreport      : 'com.tencent.bugly:crashreport_upgrade:latest.release',
+            nativecrashreport: 'com.tencent.bugly:nativecrashreport:latest.release'
+    ]
+
+
+    adapter = "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.21"
+
+    transitionseverywhere = "com.andkulikov:transitionseverywhere:1.7.0"
+
+    gson = "com.google.code.gson:gson:2.8.1"
+
+    klog = "com.github.zhaokaiqiang.klog:library:1.6.0"
+
+    luban = 'top.zibin:Luban:1.1.3'
+
+    imagesel = 'com.yuyh.imgsel:library:2.0.2'
+
+    banner = 'com.youth.banner:banner:1.4.10'
+
+    flexbox = 'com.google.android:flexbox:0.3.1'
+
+    time = 'com.jzxiang.pickerview:TimePickerDialog:1.0.1'
+
+    wechat = 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+
+    photoview = 'com.github.chrisbanes:PhotoView:2.1.3'
+
+    permission = 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+
+    circleimageview = 'de.hdodenhof:circleimageview:2.2.0'
+
+    bottomBar = 'com.github.felixsoares:BottomNavygation:1.8.6'
+
+    // other
+    utilcode = "com.blankj:utilcode:1.9.0"
+
+    springview = "com.liaoinstan.springview:library:1.3.0"
+    swipebackhelper = "com.jude:swipebackhelper:3.1.2"
+
+}

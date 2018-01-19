@@ -1,0 +1,93 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/main_orange</item>
+        <item name="colorPrimaryDark">@color/main_orange</item>
+        <item name="colorAccent">@color/main_orange</item>
+        <item name="android:splitMotionEvents">false</item>
+    </style>
+
+
+    <style name="garage_item_ll">
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="garage_item_text">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">15dp</item>
+    </style>
+
+    <style name="buy_car_menu_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_black</item>
+    </style>
+
+    <style name="buy_car_menu_ll">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+
+    <style name="setting_flattogglebutton">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_width">49dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="main_break_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/main_bg</item>
+    </style>
+
+    <style name="structure_text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <!--<item name="android:textColor">@drawable/select_text_color</item>-->
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">13sp</item>
+        <!--<item name="android:background">@drawable/select_text_bg</item>-->
+    </style>
+
+    <style name="popwindow_anim_style">
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <!-- 指定显示的动画xml -->
+
+        <item name="android:windowExitAnimation">@anim/pophidden_anim</item>
+        <!-- 指定消失的动画xml -->
+    </style>
+
+    <style name="bg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/main_bg</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="empty_img">
+        <item name="android:layout_width">@dimen/def_height</item>
+        <item name="android:layout_height">@dimen/def_height</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+
+    <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+</resources>
