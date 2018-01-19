@@ -1,0 +1,9 @@
+dependencies {
+    implementation project(":net")
+    //image
+    implementation support.appcompat
+    implementation glide.glide
+    implementation glide.glide_transformations
+    implementation glide.okhttp3_integration
+    kapt glide.glide_compiler
+}

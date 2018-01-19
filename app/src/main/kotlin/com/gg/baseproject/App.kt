@@ -6,13 +6,12 @@ import android.support.multidex.MultiDexApplication
 import android.text.TextUtils
 import android.util.Log
 import com.anpxd.ewalker.utils.GsonUtil
-import com.anpxd.framelibrary.net.ApiFactory
 import com.anpxd.framelibrary.net.widget.OkHttpFactory
 import com.anpxd.framelibrary.utils.DelegatesExt
+import com.gg.baseproject.bean.User
 import com.gg.baseproject.utils.AppConstant
-import com.gg.baseproject.utils.Utils
-import com.gg.baseproject.utils.net.Response
-import com.gg.baseproject.utils.bean.User
+import com.gg.net.ApiFactory
+import com.gg.utils.Utils
 import com.google.gson.reflect.TypeToken
 import okhttp3.Interceptor
 import okhttp3.ResponseBody

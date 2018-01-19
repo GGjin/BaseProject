@@ -1,0 +1,8 @@
+dependencies {
+    //net
+    api okhttp3.logging_interceptor
+    api retrofit2.retrofit
+    api retrofit2.adapter_rxjava2
+    api retrofit2.converter_gson
+    api klog
+}

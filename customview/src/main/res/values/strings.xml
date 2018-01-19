@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">customview</string>
+    <integer-array name="button_color_array">
+        <item>@color/main_orange</item>
+        <item>@color/main_orange</item>
+        <item>@color/white</item>
+        <item>@color/main_orange</item>
+    </integer-array>
+
+</resources>

@@ -1,8 +1,10 @@
 dependencies {
     //library
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':baselibrary')
-    implementation project(':framelibrary')
+    implementation project(':net')
+    implementation project(':utils')
+    implementation project(":image")
+    implementation project(":customview")
     //   test
     //    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     //        exclude group: 'com.android.support', module: 'support-annotations'
@@ -20,15 +22,13 @@ dependencies {
     implementation support.drawable
     implementation support.constraint
 
-    implementation gson
-    //image
-    implementation support.appcompat
-    implementation glide.glide
-    implementation glide.glide_transformations
-    implementation glide.okhttp3_integration
-    kapt glide.glide_compiler
+    implementation rx.rxlifecycle
+    // If you want to bind to Android-specific lifecycles
+    implementation rx.rxlifecycle_android
+    implementation rx.rxlifecycle_components
 
-    implementation luban
+    implementation bus.event
+
     implementation imagesel
     implementation banner
     //    kapt bus.event_compiler
@@ -44,10 +44,6 @@ dependencies {
     implementation jPush.core
 
     implementation bottomBar
-
-    // ViewModel and LiveData
-    implementation lifecycle.extensions
-    kapt lifecycle.compiler
 
     // Room
     implementation room.runtime

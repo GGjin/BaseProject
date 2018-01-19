@@ -96,11 +96,15 @@ subprojects {
 
     dependencies {
         // kotlin
-        api _kotlin.kotlin_stdlib
+        implementation _kotlin.kotlin_stdlib
 
         /******* rx ****************************************************************************/
-        api rx.rxjava2
-        api rx.rxandroid2
+        implementation rx.rxjava2
+        implementation rx.rxandroid2
+
+        // ViewModel and LiveData
+        implementation lifecycle.extensions
+        kapt lifecycle.compiler
 
         kapt databindingCompiler
 
