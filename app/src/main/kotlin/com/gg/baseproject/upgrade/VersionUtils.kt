@@ -1,12 +1,10 @@
-package com.anpxd.ewalker.utils.upgrade
+package com.gg.baseproject.upgrade
 
-import android.app.DownloadManager
 import android.content.Context
-import android.database.Cursor
 import android.os.Environment
-import com.anpxd.framelibrary.utils.DelegatesExt
 import com.gg.baseproject.App
 import com.gg.baseproject.R
+import com.gg.utils.DelegatesExt
 import java.io.File
 
 /**

@@ -1,4 +1,4 @@
-package com.anpxd.ewalker.utils
+package com.gg.utils
 
 import android.text.TextUtils
 import com.google.gson.Gson

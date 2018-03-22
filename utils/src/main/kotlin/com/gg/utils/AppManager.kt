@@ -1,4 +1,4 @@
-package com.anpxd.baselibrary.utils
+package com.gg.utils
 
 import android.annotation.SuppressLint
 import android.app.Activity

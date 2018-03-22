@@ -9,7 +9,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.widget.Toast;
 
-import com.anpxd.framelibrary.net.widget.OkHttpFactory;
+import com.gg.net.widget.OkHttpFactory;
 import com.socks.library.KLog;
 
 import java.io.File;

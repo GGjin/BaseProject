@@ -1,7 +1,5 @@
-package com.anpxd.framelibrary.net.widget
+package com.gg.net.widget
 
-import com.gg.net.utils.HttpUtils
-import com.gg.net.widget.HttpLoggingInterceptor
 import com.socks.library.KLog
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

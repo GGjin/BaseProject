@@ -5,12 +5,11 @@ import android.support.multidex.MultiDex
 import android.support.multidex.MultiDexApplication
 import android.text.TextUtils
 import android.util.Log
-import com.anpxd.ewalker.utils.GsonUtil
-import com.anpxd.framelibrary.net.widget.OkHttpFactory
-import com.anpxd.framelibrary.utils.DelegatesExt
 import com.gg.baseproject.bean.User
-import com.gg.baseproject.utils.AppConstant
 import com.gg.net.ApiFactory
+import com.gg.net.widget.OkHttpFactory
+import com.gg.utils.DelegatesExt
+import com.gg.utils.GsonUtil
 import com.gg.utils.Utils
 import com.google.gson.reflect.TypeToken
 import okhttp3.Interceptor
@@ -36,7 +35,7 @@ class App : MultiDexApplication() {
 
     }
 
-    private var userInfo: String by DelegatesExt.preference(this, AppConstant.USER, "")
+    private var userInfo: String by DelegatesExt.preference(this, "user", "")
 
     override fun onCreate() {
         super.onCreate()

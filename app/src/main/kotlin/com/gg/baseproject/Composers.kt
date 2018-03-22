@@ -1,10 +1,10 @@
 package com.gg.baseproject
 
-import com.anpxd.baselibrary.utils.AppManager
-import com.anpxd.ewalker.utils.GsonUtil
-import com.anpxd.framelibrary.utils.DelegatesExt
-import com.anpxd.net.exception.ApiException
-import com.anpxd.net.exception.ExceptionFactory
+import com.gg.net.exception.ApiException
+import com.gg.net.exception.ExceptionFactory
+import com.gg.utils.AppManager
+import com.gg.utils.DelegatesExt
+import com.gg.utils.GsonUtil
 import io.reactivex.Observable
 import io.reactivex.ObservableTransformer
 import io.reactivex.android.schedulers.AndroidSchedulers

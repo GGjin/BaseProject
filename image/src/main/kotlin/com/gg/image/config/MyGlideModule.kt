@@ -1,4 +1,4 @@
-package com.anpxd.imageloader.config
+package com.gg.image.config
 
 import android.content.Context
 import com.bumptech.glide.Glide

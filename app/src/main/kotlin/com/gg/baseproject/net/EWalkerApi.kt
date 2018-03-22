@@ -1,12 +1,11 @@
-package com.gg.baseproject.utils.net
+package com.gg.baseproject.net
 
-import com.anpxd.ewalker.utils.upgrade.VersionUtils
 import com.gg.baseproject.App
-import com.gg.baseproject.utils.AppConstant
 import com.gg.baseproject.bean.NullBean
 import com.gg.baseproject.bean.Version
 import com.gg.net.ApiFactory
 import com.gg.baseproject.Response
+import com.gg.baseproject.upgrade.VersionUtils
 import io.reactivex.Observable
 import okhttp3.MultipartBody
 import retrofit2.http.*
@@ -17,7 +16,7 @@ import retrofit2.http.*
  *  Mail    : gg.jin.yu@gmail.com
  *  Explain :
  */
-@ApiFactory.BaseUrl("http://test.anpxd.com/")
+@ApiFactory.BaseUrl("http://xxxx.xxxx.com/")
 interface EWalkerApi {
 
     /**
@@ -39,7 +38,7 @@ interface EWalkerApi {
     @FormUrlEncoded
     @POST("controller/getApk")
     fun getApk(
-            @Field("apkKey") apkKey: String? = AppConstant.APK_KEY,
+            @Field("apkKey") apkKey: String? = "",
             @Field("apkVersion") apkVersion: String? = VersionUtils.getVersionName(App.instance)
     ): Observable<Response<Version>>
 

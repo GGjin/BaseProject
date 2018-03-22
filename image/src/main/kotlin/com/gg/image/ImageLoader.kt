@@ -1,4 +1,4 @@
-package com.anpxd.ewalker.utils.image
+package com.gg.image
 
 import android.app.Activity
 import android.content.Context
@@ -8,12 +8,11 @@ import android.os.Build
 import android.text.TextUtils
 import android.view.View
 import android.widget.ImageView
-import com.anpxd.imageloader.config.GlideApp
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.target.BitmapImageViewTarget
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
-import com.gg.image.config.CircleBitmapTarget
+import com.gg.image.config.GlideApp
 
 /**
  *  Creator : GG

@@ -1,4 +1,4 @@
-package com.anpxd.ewalker.utils.upgrade
+package com.gg.baseproject.upgrade
 
 
 import android.app.NotificationManager

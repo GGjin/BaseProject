@@ -1,4 +1,4 @@
-package com.anpxd.net.exception
+package com.gg.net.exception
 
 import android.util.Log
 import com.google.gson.JsonIOException

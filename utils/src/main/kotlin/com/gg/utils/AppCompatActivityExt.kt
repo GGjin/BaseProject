@@ -1,4 +1,4 @@
-package com.anpxd.ewalker.utils
+package com.gg.utils
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProviders
@@ -10,7 +10,6 @@ import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import com.gg.utils.R
 import java.util.regex.Pattern
 
 /**

@@ -1,4 +1,4 @@
-package com.anpxd.imageloader.config
+package com.gg.image.config
 
 import com.bumptech.glide.load.Options
 import com.bumptech.glide.load.model.*

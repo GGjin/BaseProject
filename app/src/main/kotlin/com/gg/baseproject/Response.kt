@@ -1,6 +1,7 @@
 package com.gg.baseproject
 
-import com.anpxd.ewalker.utils.GsonUtil
+import com.gg.utils.GsonUtil
+
 
 /**
  *  Creator : GG

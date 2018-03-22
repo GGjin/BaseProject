@@ -1,4 +1,4 @@
-package com.anpxd.ewalker.utils
+package com.gg.utils
 
 import android.annotation.SuppressLint
 import android.app.Application

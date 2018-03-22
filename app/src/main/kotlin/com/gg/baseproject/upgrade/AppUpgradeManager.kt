@@ -1,4 +1,4 @@
-package com.anpxd.ewalker.utils.upgrade
+package com.gg.baseproject.upgrade
 
 import android.app.Activity
 import android.app.DownloadManager
@@ -13,15 +13,15 @@ import android.os.*
 import android.support.v4.content.FileProvider
 import android.support.v7.app.AlertDialog
 import android.text.TextUtils
-import com.anpxd.baselibrary.utils.AppManager
-import com.anpxd.ewalker.utils.toast
-import com.anpxd.ewalker.utils.upgrade.receiver.DownloadReceiver
-import com.anpxd.ewalker.utils.upgrade.receiver.NotificationClickReceiver
 import com.gg.baseproject.BuildConfig
 import com.gg.baseproject.bean.Version
-import com.gg.baseproject.utils.net.EWalkerApi
 import com.gg.net.ApiFactory
 import com.gg.baseproject.Composers
+import com.gg.baseproject.net.EWalkerApi
+import com.gg.baseproject.upgrade.receiver.DownloadReceiver
+import com.gg.baseproject.upgrade.receiver.NotificationClickReceiver
+import com.gg.utils.AppManager
+import com.gg.utils.toast
 import java.io.File
 
 

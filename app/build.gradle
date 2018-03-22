@@ -4,7 +4,7 @@ dependencies {
     implementation project(':net')
     implementation project(':utils')
     implementation project(":image")
-    implementation project(":customview")
+    implementation project(':widget')
     //   test
     //    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     //        exclude group: 'com.android.support', module: 'support-annotations'

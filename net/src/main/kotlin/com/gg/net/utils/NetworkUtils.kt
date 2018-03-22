@@ -1,4 +1,4 @@
-package com.anpxd.framelibrary.net.utils
+package com.gg.net.utils
 
 import android.annotation.SuppressLint
 import android.content.Context

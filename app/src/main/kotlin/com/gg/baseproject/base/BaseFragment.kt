@@ -1,8 +1,5 @@
-package com.anpxd.baselibrary.base
+package com.gg.baseproject.base
 
-import android.annotation.SuppressLint
-import android.app.Activity
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

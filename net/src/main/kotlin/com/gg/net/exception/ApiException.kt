@@ -1,4 +1,4 @@
-package com.anpxd.net.exception
+package com.gg.net.exception
 
 /**
  *  Creator : GG

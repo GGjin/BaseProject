@@ -1,10 +1,10 @@
-package com.anpxd.ewalker.utils.upgrade.receiver
+package com.gg.baseproject.upgrade.receiver
 
 import android.app.DownloadManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.anpxd.ewalker.utils.upgrade.VersionUtils
+import com.gg.baseproject.upgrade.VersionUtils
 
 /**
  *  Creator : GG

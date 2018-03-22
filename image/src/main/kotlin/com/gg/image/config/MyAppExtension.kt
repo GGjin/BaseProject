@@ -1,4 +1,4 @@
-package com.anpxd.imageloader.config
+package com.gg.image.config
 
 import com.bumptech.glide.annotation.GlideExtension
 import com.bumptech.glide.annotation.GlideOption

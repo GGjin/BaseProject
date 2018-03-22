@@ -1,4 +1,4 @@
-package com.anpxd.ewalker.utils
+package com.gg.utils
 
 import android.support.design.widget.Snackbar
 import android.view.View

@@ -1,4 +1,4 @@
-package com.anpxd.imageloader.config
+package com.gg.image.config
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

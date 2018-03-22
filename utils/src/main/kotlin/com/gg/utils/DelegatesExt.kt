@@ -1,4 +1,4 @@
-package com.anpxd.framelibrary.utils
+package com.gg.utils
 
 import android.content.Context
 

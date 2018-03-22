@@ -1,8 +1,8 @@
-package com.anpxd.framelibrary.net.widget
+package com.gg.net.widget
 
 import android.content.Context
 import android.util.Log
-import com.anpxd.framelibrary.net.utils.NetworkUtils
+import com.gg.net.utils.NetworkUtils
 import okhttp3.CacheControl
 import okhttp3.Interceptor
 import okhttp3.Response

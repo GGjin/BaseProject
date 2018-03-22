@@ -1,10 +1,9 @@
-package com.anpxd.baselibrary.base
+package com.gg.baseproject.base
 
 import android.content.pm.ActivityInfo
-import android.databinding.DataBindingUtil.setContentView
 import android.os.Bundle
 import android.support.v7.app.AppCompatDelegate
-import com.anpxd.baselibrary.utils.AppManager
+import com.gg.utils.AppManager
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 import org.greenrobot.eventbus.EventBus
 
