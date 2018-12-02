@@ -8,7 +8,6 @@ import android.database.Cursor
 import android.os.Handler
 import com.gg.baseproject.upgrade.AppUpgradeManager
 import com.gg.baseproject.upgrade.VersionUtils
-import com.gg.utils.toast
 
 /**
  *  Creator : GG

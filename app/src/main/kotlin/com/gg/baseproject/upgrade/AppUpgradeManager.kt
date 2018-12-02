@@ -21,7 +21,6 @@ import com.gg.baseproject.net.EWalkerApi
 import com.gg.baseproject.upgrade.receiver.DownloadReceiver
 import com.gg.baseproject.upgrade.receiver.NotificationClickReceiver
 import com.gg.utils.AppManager
-import com.gg.utils.toast
 import java.io.File
 
 
