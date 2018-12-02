@@ -16,10 +16,12 @@ import java.util.Date;
  * Explain :
  */
 
+@SuppressWarnings("ALL")
 public class DateUtils {
     private static SimpleDateFormat allDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private static SimpleDateFormat longDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
     private static SimpleDateFormat defaultDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    private static SimpleDateFormat yearMonthDateFormat = new SimpleDateFormat("yyyy-MM");
     private static SimpleDateFormat shortDateFormat = new SimpleDateFormat("MM.dd");
 
     /**
@@ -226,6 +228,10 @@ public class DateUtils {
         return defaultDateFormat.format(date);
     }
 
+    public static String date2YearAndMonth(Date date) {
+        return yearMonthDateFormat.format(date);
+    }
+
     /**
      * date转str  "yyyy-MM-dd HH:mm:ss"格式
      */
@@ -295,23 +301,31 @@ public class DateUtils {
      * type 控制是否判断传入时间是否是今天
      */
     public static String getWeekStr(int type, String sdate) {
-        if (type == 1 && getTwoDay(getStringDate(), sdate).equals("0"))
+        if (type == 1 && getTwoDay(getStringDate(), sdate).equals("0")) {
             return "今天";
+        }
         int week = getWeek(sdate);
-        if (week == 1)
+        if (week == 1) {
             return "周日";
-        if (week == 2)
+        }
+        if (week == 2) {
             return "周一";
-        if (week == 3)
+        }
+        if (week == 3) {
             return "周二";
-        if (week == 4)
+        }
+        if (week == 4) {
             return "周三";
-        if (week == 5)
+        }
+        if (week == 5) {
             return "周四";
-        if (week == 6)
+        }
+        if (week == 6) {
             return "周五";
-        if (week == 7)
+        }
+        if (week == 7) {
             return "周六";
+        }
 
         return "";
     }
@@ -323,8 +337,9 @@ public class DateUtils {
                 && c.get(Calendar.DATE) == calendar.get(Calendar.DATE))
             return "今天";
         int week = calendar.get(Calendar.DAY_OF_WEEK);
-        if (week == 1)
+        if (week == 1) {
             return "日";
+        }
         if (week == 2)
             return "一";
         if (week == 3)
@@ -417,13 +432,10 @@ public class DateUtils {
     public static String convertTimestamp(Date date) {
         if (date == null)
             return "";
-//        try {
-//            Date date = f.parse(time);
-//            Date now = new Date();
         long timelong = date.getTime();
         long nowlong = System.currentTimeMillis();
 
-        String oldTimeDate = (date.getMonth() + 1) + "月" + date.getDate() + "日";
+        String oldTimeDate = defaultDateFormat.format(date);
 
         long diff = -getNowDaysDiff(date2AllStr(date));
         if (diff == 0) { // 今天
@@ -458,8 +470,9 @@ public class DateUtils {
             return "今天 " + allDateFormat.format(date).substring(11, 16);
         } else if (diff >= -3 && diff < 0) {
             return -diff + " 天后";
-        } else
+        } else {
             return oldTimeDate; // 更早
+        }
     }
 
     //time - 当前天 >0 说明未出发，否则是以前

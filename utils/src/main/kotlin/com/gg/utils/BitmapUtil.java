@@ -15,12 +15,15 @@ import android.graphics.Bitmap.CompressFormat;
 
 import junit.framework.Assert;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.RandomAccessFile;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -517,5 +520,75 @@ public class BitmapUtil {
         return null;
     }
 
+
+    /**
+     * 把网络资源图片转化成bitmap
+     *
+     * @param url 网络资源图片
+     * @return Bitmap
+     */
+    public static Bitmap getLocalOrNetBitmap(String url) {
+        Bitmap bitmap = null;
+        InputStream in = null;
+        BufferedOutputStream out = null;
+        try {
+            in = new BufferedInputStream(new URL(url).openStream(), 1024);
+            final ByteArrayOutputStream dataStream = new ByteArrayOutputStream();
+            out = new BufferedOutputStream(dataStream, 1024);
+            copy(in, out);
+            out.flush();
+            byte[] data = dataStream.toByteArray();
+            bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+            data = null;
+            return bitmap;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static byte[] WeChatBitmapToByteArray(Bitmap bmp, boolean needRecycle) {
+
+        // 首先进行一次大范围的压缩
+
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        bmp.compress(CompressFormat.JPEG, 100, output);
+        float zoom = (float)Math.sqrt(32 * 1024 / (float)output.toByteArray().length); //获取缩放比例
+
+        // 设置矩阵数据
+        Matrix matrix = new Matrix();
+        matrix.setScale(zoom, zoom);
+
+        // 根据矩阵数据进行新bitmap的创建
+        Bitmap resultBitmap = Bitmap.createBitmap(bmp, 0, 0, bmp.getWidth(), bmp.getHeight(), matrix, true);
+
+        output.reset();
+
+        resultBitmap.compress(CompressFormat.JPEG, 100, output);
+
+        // 如果进行了上面的压缩后，依旧大于32K，就进行小范围的微调压缩
+        while(output.toByteArray().length > 32 * 1024){
+            matrix.setScale(0.9f, 0.9f);//每次缩小 1/10
+
+            resultBitmap = Bitmap.createBitmap(
+                    resultBitmap, 0, 0,
+                    resultBitmap.getWidth(), resultBitmap.getHeight(), matrix,true);
+
+            output.reset();
+            resultBitmap.compress(CompressFormat.JPEG, 100, output);
+        }
+
+        return output.toByteArray();
+    }
+
+
+    private static void copy(InputStream in, OutputStream out)
+            throws IOException {
+        byte[] b = new byte[1024];
+        int read;
+        while ((read = in.read(b)) != -1) {
+            out.write(b, 0, read);
+        }
+    }
 
 }

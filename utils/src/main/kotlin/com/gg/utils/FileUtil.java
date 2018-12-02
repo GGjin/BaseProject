@@ -1,6 +1,8 @@
 package com.gg.utils;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
@@ -109,7 +111,7 @@ public class FileUtil {
      */
     static String getFileName(Context context, Uri uri) {
         String result = null;
-        if (uri.getScheme().equals("content")) {
+        if ("content".equals(uri.getScheme())) {
             Cursor cursor = context.getContentResolver().query(uri, null, null, null, null);
             try {
                 if (cursor != null && cursor.moveToFirst()) {
@@ -236,7 +238,7 @@ public class FileUtil {
         return path;
     }
 
-    public   static  boolean isFolderExists(String strFolder) {
+    public static boolean isFolderExists(String strFolder) {
         File file = new File(strFolder);
         if (!file.exists()) {
             return file.mkdirs();
@@ -244,7 +246,7 @@ public class FileUtil {
         return true;
     }
 
-    public static String getImageFileDir(){
+    public static String getImageFileDir() {
         String path = filePathForStorageSDCard();
         path += "image/";
         File file = new File(path);
@@ -255,24 +257,24 @@ public class FileUtil {
             if (oldFile.exists()) {
                 createNomediaFile(oldPath);
             }
-        } catch (Exception e){
+        } catch (Exception e) {
         }
         return path;
     }
 
     private static void createNomediaFile(String dirPath) {
         try {
-            String nomediaPath = dirPath+".nomedia";
+            String nomediaPath = dirPath + ".nomedia";
             File file = new File(nomediaPath);
-            if (!file.exists()){
+            if (!file.exists()) {
                 file.createNewFile();
             }
-        } catch (Exception e){
-            Log.e("exception",e.getMessage());
+        } catch (Exception e) {
+            Log.e("exception", e.getMessage());
         }
     }
 
-    public  static  String filePathForStorageSDCard() {
+    public static String filePathForStorageSDCard() {
         String path = null;
 
         String state = Environment.getExternalStorageState();
@@ -280,21 +282,21 @@ public class FileUtil {
             path = Environment.getExternalStorageDirectory().getPath()
                     + "/Duckr/";
             try {
-                String nomediaPath = path+".nomedia";
+                String nomediaPath = path + ".nomedia";
                 File file = new File(nomediaPath);
-                if (file.exists()){
+                if (file.exists()) {
                     file.delete();
                 }
-            } catch (Exception e){
-                Log.e("exception",e.getMessage());
+            } catch (Exception e) {
+                Log.e("exception", e.getMessage());
             }
         }
         return path;
     }
 
-    public static boolean copy(File from, File to){
+    public static boolean copy(File from, File to) {
         try {
-            File temFile = new File(to.getPath()+".tmp");
+            File temFile = new File(to.getPath() + ".tmp");
             temFile.createNewFile();
             FileInputStream fileInputStream = new FileInputStream(from);
             FileOutputStream fileOutputStream = new FileOutputStream(temFile);
@@ -328,10 +330,7 @@ public class FileUtil {
         // SD Card Mounted
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             StringBuffer buffer = new StringBuffer();
-            buffer.append(Environment.getExternalStorageDirectory().getAbsolutePath());
-            buffer.append("/Android/data/");
-            buffer.append(context.getPackageName());
-            buffer.append("/cache/ewalker");
+            buffer.append(Environment.getExternalStorageDirectory().getAbsolutePath()).append(File.separator).append("QiYuan");
             cache = new File(buffer.toString());
         } else {
             // Use internal storage
@@ -348,5 +347,22 @@ public class FileUtil {
 
     public static boolean isSdCardAvailable() {
         return Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState());
+    }
+
+
+    public static void noticeGallery(Context context, String filePath, String name) {
+        ContentValues values = new ContentValues();
+        values.put(MediaStore.Images.Media.DATE_TAKEN, System.currentTimeMillis());
+        values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
+        values.put(MediaStore.MediaColumns.DATA, filePath);
+        context.getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+        // 其次把文件插入到系统图库
+        try {
+            MediaStore.Images.Media.insertImage(context.getContentResolver(), filePath, name, null);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        // 最后通知图库更新
+        context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file://" + filePath)));
     }
 }

@@ -40,9 +40,6 @@ dependencies {
     implementation circleimageview
     implementation multidex
 
-    implementation jPush.push
-    implementation jPush.core
-
     implementation bottomBar
 
     // Room
@@ -51,24 +48,4 @@ dependencies {
 
     implementation bugly.crashreport
     implementation bugly.nativecrashreport
-}
-android {
-    signingConfigs {
-    }
-    buildTypes {
-    }
-    defaultConfig {
-
-        ndk {
-            //选择要添加的对应cpu类型的.so库。
-            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
-            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
-        }
-
-        manifestPlaceholders = [
-                JPUSH_PKGNAME: applicationId,
-                JPUSH_APPKEY : "", //JPush上注册的包名对应的appkey.
-                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
-        ]
-    }
 }

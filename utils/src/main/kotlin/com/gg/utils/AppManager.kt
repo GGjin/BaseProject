@@ -117,6 +117,14 @@ class AppManager private constructor() {
         return false
     }
 
+    fun getActivity(cls: Class<*>): Activity? {
+        mActivities.forEach {
+            if (it.javaClass.canonicalName == cls.canonicalName)
+                return it
+        }
+        return null
+    }
+
     /**
      * Finish all activity of th mActivities and make mActivities clear
      */
