@@ -2,12 +2,17 @@ package com.gg.baseproject
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.gg.baseproject.bean.User
 import com.gg.image.loadCircle
 import com.gg.utils.clickWithTrigger
+import com.gg.utils.extraDelegate
 import com.gg.utils.toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+
+    private val user: User by extraDelegate("user", User())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

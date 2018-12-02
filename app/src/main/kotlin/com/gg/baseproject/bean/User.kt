@@ -6,5 +6,5 @@ package com.gg.baseproject.bean
  * Mail    : gg.jin.yu@gmai.com
  * Explain :
  */
-data class User(val userId: String) {
+data class User(val userId: String? = "") {
 }
