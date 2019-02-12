@@ -267,7 +267,7 @@ object CopyViewUtils {
             cv.drawBitmap(watermark, (srcWidth - waterWidth).toFloat(), (srcHeight - waterHeight).toFloat(), null)//在src的右下解画入水印图片
             //cv.drawText("HELLO",srcWidth-waterWidth,srcHeight-waterHeight, paint);//这是画入水印文字，在画文字时，需要指定paint
         }
-        cv.save(Canvas.ALL_SAVE_FLAG)//保存
+//        cv.save(Canvas.ALL_SAVE_FLAG)//保存
         cv.restore()//存储
         return newb
     }
@@ -315,7 +315,7 @@ object CopyViewUtils {
         val watermark = getWatermarkImg(if (newBitmap.width > newBitmap.height) newBitmap.height else newBitmap.width, watermarkBitmap)
         val paint = Paint()
         canvas.drawBitmap(watermark, (newBitmap.width - watermark!!.width).toFloat(), (newBitmap.height - watermark.height).toFloat(), paint)
-        canvas.save(Canvas.ALL_SAVE_FLAG)
+//        canvas.save(Canvas.ALL_SAVE_FLAG)
         canvas.restore()
         return newBitmap
     }

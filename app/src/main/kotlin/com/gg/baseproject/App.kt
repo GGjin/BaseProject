@@ -1,5 +1,6 @@
 package com.gg.baseproject
 
+import android.app.Application
 import android.content.Context
 import android.support.multidex.MultiDex
 import android.support.multidex.MultiDexApplication
@@ -23,7 +24,7 @@ import org.greenrobot.eventbus.EventBus
  *  Mail    : gg.jin.yu@gmail.com
  *  Explain :
  */
-class App : MultiDexApplication() {
+class App : Application() {
 
     companion object {
         lateinit var instance: App
@@ -100,11 +101,6 @@ class App : MultiDexApplication() {
                     }
                     .build()
         })
-    }
-
-    override fun attachBaseContext(base: Context?) {
-        super.attachBaseContext(base)
-        MultiDex.install(this)
     }
 
     fun getUser(): User? = if (TextUtils.isEmpty(userInfo)) null else GsonUtil.jsonToBean(userInfo, User::class.java)!!

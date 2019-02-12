@@ -10,8 +10,8 @@ buildscript {
     apply from: "ext.gradle"
 
     repositories {
-        jcenter()
         google()
+        jcenter()
     }
     dependencies {
         classpath _android.plugin
@@ -24,11 +24,11 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
         maven { url "https://jitpack.io" }
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         mavenCentral()
         google()
+        jcenter()
     }
 }
 
@@ -106,7 +106,7 @@ subprojects {
         implementation lifecycle.extensions
         kapt lifecycle.compiler
 
-        kapt databindingCompiler
+//        kapt databindingCompiler
 
     }
 

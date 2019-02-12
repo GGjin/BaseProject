@@ -22,6 +22,7 @@ import android.util.TypedValue
 import android.view.View
 import android.view.WindowManager
 import android.widget.Toast
+import com.google.gson.Gson
 import java.util.regex.Pattern
 
 
@@ -47,6 +48,14 @@ fun AppCompatActivity.addFragmentToActivity(fragment: Fragment, tag: String) {
         add(fragment, tag)
     }
 }
+
+var gson = Gson()
+
+fun Any.toJson(): String = gson.toJson(this)
+
+inline fun <reified T> String.toObject(): T = gson.fromJson<T>(this)
+
+inline fun <reified T> Gson.fromJson(json: String) = fromJson(json, T::class.java)
 
 fun AppCompatActivity.setupActionBar(@IdRes toolbarId: Int, action: ActionBar.() -> Unit) {
     setSupportActionBar(findViewById(toolbarId))
